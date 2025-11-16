@@ -1,10 +1,18 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.views.generic import DetailView
-from .models import Book, Library, Author
-from django.contrib.auth import login, logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.decorators import login_required, user_passes_test, permission_required
+from .models import Book
+from .models import Library
+from .models import Author
+from django.contrib.auth import login
+from django.contrib.auth import logout
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import permission_required
 from django.contrib import messages
 from .forms import BookForm
 

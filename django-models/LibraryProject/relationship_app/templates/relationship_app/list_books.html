@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Books</title>
+</head>
+<body>
+    <h1>Books Available:</h1>
+    <ul>
+        {% for book in books %}
+        <li>
+            {{ book.title }} by {{ book.author.name }} ({{ book.publiation_year}})
+            | <a href="{% url 'edit_book' book.pk %}">Edit</a>
+            | <a href="{% url 'delete_book' book.pk %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% if perms.relationship_app.can_add_book %}
+        <a href="{% url 'add_book' %}">Add New Book</a>
+    {% endif %}
+</body>
+</html>

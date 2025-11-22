@@ -133,3 +133,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ]
 }
+REST_FRAMEWORK.setdefault('DEFAULT_PERMISSION_CLASSES', [
+    'rest_framework.permissions.IsAuthenticated',
+])  
